@@ -19,7 +19,7 @@ ISR(INT0_vect)
     x_rotation.isr();
 }
 
-RotationINTR::RotationINTR() : m_rotation(0), m_msec(0)
+RotationINTR::RotationINTR() : m_rotation(0), m_msec(0), m_meter_per_sec(0)
 {
 }
 
@@ -36,25 +36,21 @@ int RotationINTR::begin()
     return 1;
 }
 
+unsigned int RotationINTR::getVelocity()
+{
+    return m_meter_per_sec;
+}
+
 void RotationINTR::isr()
 {
     m_rotation++;
-    if (x_manual_mode) {
-        return;
-    }
+    if (x_manual_mode) return;
+    if (x_showup) x_console.write("R");
+    
     unsigned long t = x_tick.getMillisec();
+    if (m_msec > t) return; // ignore overflow
     m_meter_per_sec = (WHEEL_SIZE * 1000) / (t - m_msec);
     m_msec = t;
-    
-    m_meter_per_sec = 54;
-    char buf[10];
-    wordToString(m_meter_per_sec, buf);
-    x_console.write(buf);
-    
-    if (x_showup) {
-        x_console.write("R");
-        x_bluetooth.write("R");
-    }
 }
 
 RotationINTR x_rotation;

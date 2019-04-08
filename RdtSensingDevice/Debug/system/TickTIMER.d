@@ -14,7 +14,8 @@ system/TickTIMER.d system/TickTIMER.o: ../system/TickTIMER.cpp \
  ../system/Util.h \
  e:\atmelstudio7\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  e:\atmelstudio7\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- ../system/ConsoleUART.h ../system/BluetoothUART.h ../system/TickTIMER.h \
+ ../system/ConsoleUART.h ../system/BluetoothUART.h \
+ ../system/RotationINTR.h ../system/DistanceADC.h ../system/TickTIMER.h \
  ../main.h
 
 e:\atmelstudio7\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
@@ -50,6 +51,10 @@ e:\atmelstudio7\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\
 ../system/ConsoleUART.h:
 
 ../system/BluetoothUART.h:
+
+../system/RotationINTR.h:
+
+../system/DistanceADC.h:
 
 ../system/TickTIMER.h:
 

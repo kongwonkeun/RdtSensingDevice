@@ -17,6 +17,8 @@ public:
     void end();
     unsigned long getMillisec();
     unsigned long getSec();
+    void incInterval();
+    void decInterval();
     void isr();
 private:
     unsigned long m_millisec;

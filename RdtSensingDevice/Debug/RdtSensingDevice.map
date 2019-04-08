@@ -115,17 +115,11 @@ Discarded input sections
                 0x00000000        0x2 system/DistanceADC.o
  .text._ZN11DistanceADC3endEv
                 0x00000000        0x2 system/DistanceADC.o
- .text._ZN11DistanceADC8readAdc0Ev
-                0x00000000       0x1c system/DistanceADC.o
- .text._ZN11DistanceADC11getDistanceEv
-                0x00000000       0x2e system/DistanceADC.o
  .text._ZN11DistanceADC19calculateCentiMeterEj
                 0x00000000       0x1a system/DistanceADC.o
  .text          0x00000000        0x0 system/RotationINTR.o
  .data          0x00000000        0x0 system/RotationINTR.o
  .bss           0x00000000        0x0 system/RotationINTR.o
- .text._ZN12RotationINTRC2Ev
-                0x00000000       0x14 system/RotationINTR.o
  .text._ZN12RotationINTRD2Ev
                 0x00000000        0x2 system/RotationINTR.o
  .text          0x00000000        0x0 system/TickTIMER.o
@@ -144,6 +138,8 @@ Discarded input sections
  .text._ZdlPv   0x00000000        0x6 system/Util.o
  .text._Z12byteToStringhPc
                 0x00000000       0x82 system/Util.o
+ .text._Z12wordToStringcjPc
+                0x00000000      0x136 system/Util.o
  .text          0x00000000        0x0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
  .data          0x00000000        0x0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
  .bss           0x00000000        0x0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
@@ -471,7 +467,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1b94
+.text           0x00000000     0x1db2
  *(.vectors)
  .vectors       0x00000000       0x8c E:/AtmelStudio7/7.0/Packs/Atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128a/avr51/crtatmega128a.o
                 0x00000000                __vector_default
@@ -569,217 +565,239 @@ END GROUP
                 0x000001ee                . = ALIGN (0x2)
  *(.text.*)
  .text._Z4helpv
-                0x000001ee       0x2a main.o
+                0x000001ee       0x3e main.o
                 0x000001ee                _Z4helpv
  .text._Z12toggleShowupv
-                0x00000218       0x2a main.o
-                0x00000218                _Z12toggleShowupv
+                0x0000022c       0x2a main.o
+                0x0000022c                _Z12toggleShowupv
  .text._Z16toggleManualModev
-                0x00000242       0x2a main.o
-                0x00000242                _Z16toggleManualModev
- .text.main     0x0000026c       0x76 main.o
-                0x0000026c                main
+                0x00000256       0x2a main.o
+                0x00000256                _Z16toggleManualModev
+ .text.main     0x00000280       0x98 main.o
+                0x00000280                main
  .text._ZN13BluetoothUART5beginEm
-                0x000002e2       0x48 system/BluetoothUART.o
-                0x000002e2                _ZN13BluetoothUART5beginEm
+                0x00000318       0x48 system/BluetoothUART.o
+                0x00000318                _ZN13BluetoothUART5beginEm
  .text._ZN13BluetoothUART5writeEh
-                0x0000032a       0x70 system/BluetoothUART.o
-                0x0000032a                _ZN13BluetoothUART5writeEh
+                0x00000360       0x70 system/BluetoothUART.o
+                0x00000360                _ZN13BluetoothUART5writeEh
  .text._ZN13BluetoothUART5writeEPKhj
-                0x0000039a       0x52 system/BluetoothUART.o
-                0x0000039a                _ZN13BluetoothUART5writeEPKhj
+                0x000003d0       0x52 system/BluetoothUART.o
+                0x000003d0                _ZN13BluetoothUART5writeEPKhj
  .text._ZN13BluetoothUART5writeEPKc
-                0x000003ec       0x20 system/BluetoothUART.o
-                0x000003ec                _ZN13BluetoothUART5writeEPKc
+                0x00000422       0x20 system/BluetoothUART.o
+                0x00000422                _ZN13BluetoothUART5writeEPKc
  .text._ZN13BluetoothUART5rxIsrEv
-                0x0000040c       0x36 system/BluetoothUART.o
-                0x0000040c                _ZN13BluetoothUART5rxIsrEv
+                0x00000442       0x36 system/BluetoothUART.o
+                0x00000442                _ZN13BluetoothUART5rxIsrEv
  .text.__vector_18
-                0x00000442       0x52 system/BluetoothUART.o
-                0x00000442                __vector_18
+                0x00000478       0x52 system/BluetoothUART.o
+                0x00000478                __vector_18
  .text._ZN13BluetoothUART5txIsrEv
-                0x00000494       0x46 system/BluetoothUART.o
-                0x00000494                _ZN13BluetoothUART5txIsrEv
+                0x000004ca       0x46 system/BluetoothUART.o
+                0x000004ca                _ZN13BluetoothUART5txIsrEv
  .text.__vector_19
-                0x000004da       0x52 system/BluetoothUART.o
-                0x000004da                __vector_19
+                0x00000510       0x52 system/BluetoothUART.o
+                0x00000510                __vector_19
  .text.__vector_20
-                0x0000052c       0x52 system/BluetoothUART.o
-                0x0000052c                __vector_20
+                0x00000562       0x52 system/BluetoothUART.o
+                0x00000562                __vector_20
  .text._GLOBAL__sub_I___vector_18
-                0x0000057e       0x12 system/BluetoothUART.o
+                0x000005b4       0x12 system/BluetoothUART.o
  .text._ZN11ConsoleUART5beginEm
-                0x00000590       0x5e system/ConsoleUART.o
-                0x00000590                _ZN11ConsoleUART5beginEm
+                0x000005c6       0x5e system/ConsoleUART.o
+                0x000005c6                _ZN11ConsoleUART5beginEm
  .text._ZN11ConsoleUART4readEv
-                0x000005ee       0x42 system/ConsoleUART.o
-                0x000005ee                _ZN11ConsoleUART4readEv
+                0x00000624       0x42 system/ConsoleUART.o
+                0x00000624                _ZN11ConsoleUART4readEv
  .text._ZN11ConsoleUART5writeEh
-                0x00000630       0x88 system/ConsoleUART.o
-                0x00000630                _ZN11ConsoleUART5writeEh
+                0x00000666       0x88 system/ConsoleUART.o
+                0x00000666                _ZN11ConsoleUART5writeEh
  .text._ZN11ConsoleUART5writeEPKhj
-                0x000006b8       0x52 system/ConsoleUART.o
-                0x000006b8                _ZN11ConsoleUART5writeEPKhj
+                0x000006ee       0x52 system/ConsoleUART.o
+                0x000006ee                _ZN11ConsoleUART5writeEPKhj
  .text._ZN11ConsoleUART5writeEPKc
-                0x0000070a       0x20 system/ConsoleUART.o
-                0x0000070a                _ZN11ConsoleUART5writeEPKc
+                0x00000740       0x20 system/ConsoleUART.o
+                0x00000740                _ZN11ConsoleUART5writeEPKc
  .text._ZN11ConsoleUART5rxIsrEv
-                0x0000072a       0x54 system/ConsoleUART.o
-                0x0000072a                _ZN11ConsoleUART5rxIsrEv
+                0x00000760       0x54 system/ConsoleUART.o
+                0x00000760                _ZN11ConsoleUART5rxIsrEv
  .text.__vector_30
-                0x0000077e       0x52 system/ConsoleUART.o
-                0x0000077e                __vector_30
+                0x000007b4       0x52 system/ConsoleUART.o
+                0x000007b4                __vector_30
  .text._ZN11ConsoleUART5txIsrEv
-                0x000007d0       0x50 system/ConsoleUART.o
-                0x000007d0                _ZN11ConsoleUART5txIsrEv
+                0x00000806       0x50 system/ConsoleUART.o
+                0x00000806                _ZN11ConsoleUART5txIsrEv
  .text.__vector_31
-                0x00000820       0x52 system/ConsoleUART.o
-                0x00000820                __vector_31
+                0x00000856       0x52 system/ConsoleUART.o
+                0x00000856                __vector_31
  .text.__vector_32
-                0x00000872       0x52 system/ConsoleUART.o
-                0x00000872                __vector_32
+                0x000008a8       0x52 system/ConsoleUART.o
+                0x000008a8                __vector_32
  .text._GLOBAL__sub_I___vector_30
-                0x000008c4       0x12 system/ConsoleUART.o
+                0x000008fa       0x12 system/ConsoleUART.o
  .text._ZN11DistanceADC5beginEv
-                0x000008d6        0xc system/DistanceADC.o
-                0x000008d6                _ZN11DistanceADC5beginEv
+                0x0000090c        0xc system/DistanceADC.o
+                0x0000090c                _ZN11DistanceADC5beginEv
+ .text._ZN11DistanceADC8readAdc0Ev
+                0x00000918       0x1c system/DistanceADC.o
+                0x00000918                _ZN11DistanceADC8readAdc0Ev
  .text._ZN11DistanceADC18calculateMilliVoltEj
-                0x000008e2       0x20 system/DistanceADC.o
-                0x000008e2                _ZN11DistanceADC18calculateMilliVoltEj
+                0x00000934       0x20 system/DistanceADC.o
+                0x00000934                _ZN11DistanceADC18calculateMilliVoltEj
+ .text._ZN11DistanceADC11getDistanceEv
+                0x00000954       0x2a system/DistanceADC.o
+                0x00000954                _ZN11DistanceADC11getDistanceEv
  .text._ZN11DistanceADC3isrEv
-                0x00000902       0x2e system/DistanceADC.o
-                0x00000902                _ZN11DistanceADC3isrEv
+                0x0000097e       0x4a system/DistanceADC.o
+                0x0000097e                _ZN11DistanceADC3isrEv
  .text.__vector_21
-                0x00000930       0x52 system/DistanceADC.o
-                0x00000930                __vector_21
+                0x000009c8       0x52 system/DistanceADC.o
+                0x000009c8                __vector_21
  .text._GLOBAL__sub_I___vector_21
-                0x00000982       0x1c system/DistanceADC.o
+                0x00000a1a       0x1c system/DistanceADC.o
+ .text._ZN12RotationINTRC2Ev
+                0x00000a36       0x18 system/RotationINTR.o
+                0x00000a36                _ZN12RotationINTRC2Ev
+                0x00000a36                _ZN12RotationINTRC1Ev
  .text._ZN12RotationINTR5beginEv
-                0x0000099e       0x1c system/RotationINTR.o
-                0x0000099e                _ZN12RotationINTR5beginEv
+                0x00000a4e       0x1c system/RotationINTR.o
+                0x00000a4e                _ZN12RotationINTR5beginEv
+ .text._ZN12RotationINTR11getVelocityEv
+                0x00000a6a        0x8 system/RotationINTR.o
+                0x00000a6a                _ZN12RotationINTR11getVelocityEv
  .text._ZN12RotationINTR3isrEv
-                0x000009ba       0x9a system/RotationINTR.o
-                0x000009ba                _ZN12RotationINTR3isrEv
+                0x00000a72       0x8e system/RotationINTR.o
+                0x00000a72                _ZN12RotationINTR3isrEv
  .text.__vector_1
-                0x00000a54       0x52 system/RotationINTR.o
-                0x00000a54                __vector_1
+                0x00000b00       0x52 system/RotationINTR.o
+                0x00000b00                __vector_1
  .text._GLOBAL__sub_I___vector_1
-                0x00000aa6       0x16 system/RotationINTR.o
+                0x00000b52        0x8 system/RotationINTR.o
  .text._ZN9TickTIMER5beginEj
-                0x00000abc       0x20 system/TickTIMER.o
-                0x00000abc                _ZN9TickTIMER5beginEj
+                0x00000b5a       0x20 system/TickTIMER.o
+                0x00000b5a                _ZN9TickTIMER5beginEj
  .text._ZN9TickTIMER3endEv
-                0x00000adc        0x8 system/TickTIMER.o
-                0x00000adc                _ZN9TickTIMER3endEv
+                0x00000b7a        0x8 system/TickTIMER.o
+                0x00000b7a                _ZN9TickTIMER3endEv
  .text._ZN9TickTIMER11getMillisecEv
-                0x00000ae4        0xc system/TickTIMER.o
-                0x00000ae4                _ZN9TickTIMER11getMillisecEv
+                0x00000b82        0xc system/TickTIMER.o
+                0x00000b82                _ZN9TickTIMER11getMillisecEv
+ .text._ZN9TickTIMER11incIntervalEv
+                0x00000b8e       0x5c system/TickTIMER.o
+                0x00000b8e                _ZN9TickTIMER11incIntervalEv
+ .text._ZN9TickTIMER11decIntervalEv
+                0x00000bea       0x72 system/TickTIMER.o
+                0x00000bea                _ZN9TickTIMER11decIntervalEv
  .text._ZN9TickTIMER3isrEv
-                0x00000af0       0x90 system/TickTIMER.o
-                0x00000af0                _ZN9TickTIMER3isrEv
+                0x00000c5c       0xbc system/TickTIMER.o
+                0x00000c5c                _ZN9TickTIMER3isrEv
  .text.__vector_15
-                0x00000b80       0x52 system/TickTIMER.o
-                0x00000b80                __vector_15
+                0x00000d18       0x52 system/TickTIMER.o
+                0x00000d18                __vector_15
  .text._GLOBAL__sub_I___vector_15
-                0x00000bd2       0x16 system/TickTIMER.o
+                0x00000d6a       0x16 system/TickTIMER.o
  .text._GLOBAL__sub_D___vector_15
-                0x00000be8        0x8 system/TickTIMER.o
+                0x00000d80        0x8 system/TickTIMER.o
  .text._Z3mapjjjjj
-                0x00000bf0        0x4 system/Util.o
-                0x00000bf0                _Z3mapjjjjj
+                0x00000d88        0x4 system/Util.o
+                0x00000d88                _Z3mapjjjjj
+ .text._Z12byteToStringchPc
+                0x00000d8c       0x86 system/Util.o
+                0x00000d8c                _Z12byteToStringchPc
  .text._Z12wordToStringjPc
-                0x00000bf4      0x11e system/Util.o
-                0x00000bf4                _Z12wordToStringjPc
+                0x00000e12      0x11e system/Util.o
+                0x00000e12                _Z12wordToStringjPc
  .text.avr-libc.fplib
-                0x00000d12        0xa e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
-                0x00000d12                __subsf3
-                0x00000d14                __addsf3
+                0x00000f30        0xa e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
+                0x00000f30                __subsf3
+                0x00000f32                __addsf3
  .text.avr-libc.fplib
-                0x00000d1c       0xc0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o)
-                0x00000d36                __addsf3x
+                0x00000f3a       0xc0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+                0x00000f54                __addsf3x
  .text.avr-libc.fplib
-                0x00000ddc        0x4 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3.o)
-                0x00000ddc                __divsf3
+                0x00000ffa        0x4 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3.o)
+                0x00000ffa                __divsf3
  .text.avr-libc.fplib
-                0x00000de0       0xcc e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3x.o)
-                0x00000df6                __divsf3x
-                0x00000dfa                __divsf3_pse
+                0x00000ffe       0xcc e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                0x00001014                __divsf3x
+                0x00001018                __divsf3_pse
  .text.avr-libc.fplib
-                0x00000eac       0x58 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fixunssfsi.o)
-                0x00000eac                __fixunssfsi
+                0x000010ca       0x58 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fixunssfsi.o)
+                0x000010ca                __fixunssfsi
  .text.avr-libc.fplib
-                0x00000f04       0x7a e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(floatsisf.o)
-                0x00000f04                __floatunsisf
-                0x00000f08                __floatsisf
+                0x00001122       0x7a e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+                0x00001122                __floatunsisf
+                0x00001126                __floatsisf
  .text.avr-libc.fplib
-                0x00000f7e        0xc e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_inf.o)
-                0x00000f7e                __fp_inf
+                0x0000119c        0xc e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+                0x0000119c                __fp_inf
  .text.avr-libc.fplib
-                0x00000f8a        0x6 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_nan.o)
-                0x00000f8a                __fp_nan
+                0x000011a8        0x6 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+                0x000011a8                __fp_nan
  .text.avr-libc.fplib
-                0x00000f90        0xe e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
-                0x00000f90                __fp_pscA
+                0x000011ae        0xe e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+                0x000011ae                __fp_pscA
  .text.avr-libc.fplib
-                0x00000f9e        0xe e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
-                0x00000f9e                __fp_pscB
+                0x000011bc        0xe e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+                0x000011bc                __fp_pscB
  .text.avr-libc.fplib
-                0x00000fac       0x22 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_round.o)
-                0x00000fac                __fp_round
+                0x000011ca       0x22 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_round.o)
+                0x000011ca                __fp_round
  .text.avr-libc.fplib
-                0x00000fce       0x44 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_split3.o)
-                0x00000fce                __fp_split3
-                0x00000fde                __fp_splitA
+                0x000011ec       0x44 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+                0x000011ec                __fp_split3
+                0x000011fc                __fp_splitA
  .text.avr-libc.fplib
-                0x00001012        0xe e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_zero.o)
-                0x00001012                __fp_zero
-                0x00001014                __fp_szero
+                0x00001230        0xe e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+                0x00001230                __fp_zero
+                0x00001232                __fp_szero
  .text.avr-libc.fplib
-                0x00001020        0x4 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o)
-                0x00001020                __mulsf3
+                0x0000123e        0x4 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o)
+                0x0000123e                __mulsf3
  .text.avr-libc.fplib
-                0x00001024       0xc2 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3x.o)
-                0x00001038                __mulsf3x
-                0x0000103c                __mulsf3_pse
+                0x00001242       0xc2 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3x.o)
+                0x00001256                __mulsf3x
+                0x0000125a                __mulsf3_pse
  .text.avr-libc
-                0x000010e6      0x712 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libprintf_flt.a(vfprintf_flt.o)
-                0x000010e6                vfprintf
+                0x00001304      0x712 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libprintf_flt.a(vfprintf_flt.o)
+                0x00001304                vfprintf
  .text.libgcc.div
-                0x000017f8       0x44 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
-                0x000017f8                __udivmodsi4
+                0x00001a16       0x44 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+                0x00001a16                __udivmodsi4
  .text.libgcc.mul
-                0x0000183c       0x1e e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
-                0x0000183c                __umulhisi3
- .text.libgcc   0x0000185a       0x12 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
-                0x0000185a                __tablejump2__
+                0x00001a5a       0x1e e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+                0x00001a5a                __umulhisi3
+ .text.libgcc   0x00001a78       0x12 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+                0x00001a78                __tablejump2__
  .text.avr-libc
-                0x0000186c      0x1b0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ftoa_engine.o)
-                0x0000186c                __ftoa_engine
+                0x00001a8a      0x1b0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ftoa_engine.o)
+                0x00001a8a                __ftoa_engine
  .text.avr-libc
-                0x00001a1c       0x16 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
-                0x00001a1c                strnlen_P
+                0x00001c3a       0x16 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
+                0x00001c3a                strnlen_P
  .text.avr-libc
-                0x00001a32       0x16 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
-                0x00001a32                strnlen
+                0x00001c50       0x16 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
+                0x00001c50                strnlen
  .text.avr-libc
-                0x00001a48       0x78 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
-                0x00001a48                fputc
+                0x00001c66       0x78 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
+                0x00001c66                fputc
  .text.avr-libc
-                0x00001ac0       0xbc e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
-                0x00001ac0                __ultoa_invert
-                0x00001b7c                . = ALIGN (0x2)
+                0x00001cde       0xbc e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
+                0x00001cde                __ultoa_invert
+                0x00001d9a                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001b7c        0x0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                0x00001b7c                _exit
-                0x00001b7c                exit
+ .fini9         0x00001d9a        0x0 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x00001d9a                _exit
+                0x00001d9a                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x00001b7c       0x14 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_dtors.o)
-                0x00001b7c                __do_global_dtors
+ .fini6         0x00001d9a       0x14 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_dtors.o)
+                0x00001d9a                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -792,11 +810,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001b90        0x4 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .fini0         0x00001dae        0x4 e:/atmelstudio7/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001b94                _etext = .
+                0x00001db2                _etext = .
 
-.data           0x00800100       0xb4 load address 0x00001b94
+.data           0x00800100      0x114 load address 0x00001db2
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -804,51 +822,54 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800100       0xb0 main.o
-                                 0xb2 (size before relaxing)
+                0x00800100       0xde main.o
+                                 0xe0 (size before relaxing)
  .rodata.str1.1
-                0x008001b0        0x2 system/RotationINTR.o
+                0x008001de        0x2 system/DistanceADC.o
  .rodata.str1.1
-                0x008001b2        0x2 system/TickTIMER.o
+                0x008001e0        0x2 system/RotationINTR.o
+ .rodata.str1.1
+                0x008001e2       0x32 system/TickTIMER.o
+                                 0x34 (size before relaxing)
  *(.gnu.linkonce.r*)
-                0x008001b4                . = ALIGN (0x2)
-                0x008001b4                _edata = .
-                0x008001b4                PROVIDE (__data_end, .)
+                0x00800214                . = ALIGN (0x2)
+                0x00800214                _edata = .
+                0x00800214                PROVIDE (__data_end, .)
 
-.bss            0x008001b4      0x127
-                0x008001b4                PROVIDE (__bss_start, .)
+.bss            0x00800214      0x127
+                0x00800214                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.x_manual_mode
-                0x008001b4        0x1 main.o
-                0x008001b4                x_manual_mode
- .bss.x_showup  0x008001b5        0x1 main.o
-                0x008001b5                x_showup
+                0x00800214        0x1 main.o
+                0x00800214                x_manual_mode
+ .bss.x_showup  0x00800215        0x1 main.o
+                0x00800215                x_showup
  .bss.x_bluetooth
-                0x008001b6       0x84 system/BluetoothUART.o
-                0x008001b6                x_bluetooth
+                0x00800216       0x84 system/BluetoothUART.o
+                0x00800216                x_bluetooth
  .bss.x_console
-                0x0080023a       0x84 system/ConsoleUART.o
-                0x0080023a                x_console
+                0x0080029a       0x84 system/ConsoleUART.o
+                0x0080029a                x_console
  .bss.x_distance
-                0x008002be        0x9 system/DistanceADC.o
-                0x008002be                x_distance
+                0x0080031e        0x9 system/DistanceADC.o
+                0x0080031e                x_distance
  .bss.x_rotation
-                0x008002c7        0xa system/RotationINTR.o
-                0x008002c7                x_rotation
- .bss.x_tick    0x008002d1        0xa system/TickTIMER.o
-                0x008002d1                x_tick
+                0x00800327        0xa system/RotationINTR.o
+                0x00800327                x_rotation
+ .bss.x_tick    0x00800331        0xa system/TickTIMER.o
+                0x00800331                x_tick
  *(COMMON)
-                0x008002db                PROVIDE (__bss_end, .)
-                0x00001b94                __data_load_start = LOADADDR (.data)
-                0x00001c48                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0080033b                PROVIDE (__bss_end, .)
+                0x00001db2                __data_load_start = LOADADDR (.data)
+                0x00001ec6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008002db        0x0
+.noinit         0x0080033b        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008002db                _end = .
-                0x008002db                PROVIDE (__heap_start, .)
+                0x0080033b                _end = .
+                0x0080033b                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -921,7 +942,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x2d8
+.debug_aranges  0x00000000      0x300
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x38 main.o
@@ -932,85 +953,85 @@ END GROUP
  .debug_aranges
                 0x00000178       0x70 system/DistanceADC.o
  .debug_aranges
-                0x000001e8       0x48 system/RotationINTR.o
+                0x000001e8       0x50 system/RotationINTR.o
  .debug_aranges
-                0x00000230       0x68 system/TickTIMER.o
+                0x00000238       0x78 system/TickTIMER.o
  .debug_aranges
-                0x00000298       0x40 system/Util.o
+                0x000002b0       0x50 system/Util.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3f16
+.debug_info     0x00000000     0x4592
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x780 E:/AtmelStudio7/7.0/Packs/Atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_info    0x00000780      0xaa5 main.o
- .debug_info    0x00001225      0x840 system/BluetoothUART.o
- .debug_info    0x00001a65      0xaa4 system/ConsoleUART.o
- .debug_info    0x00002509      0x565 system/DistanceADC.o
- .debug_info    0x00002a6e      0x945 system/RotationINTR.o
- .debug_info    0x000033b3      0x913 system/TickTIMER.o
- .debug_info    0x00003cc6      0x250 system/Util.o
+ .debug_info    0x00000780      0xb47 main.o
+ .debug_info    0x000012c7      0x840 system/BluetoothUART.o
+ .debug_info    0x00001b07      0xaa4 system/ConsoleUART.o
+ .debug_info    0x000025ab      0x7fb system/DistanceADC.o
+ .debug_info    0x00002da6      0x71f system/RotationINTR.o
+ .debug_info    0x000034c5      0xdc9 system/TickTIMER.o
+ .debug_info    0x0000428e      0x304 system/Util.o
 
-.debug_abbrev   0x00000000     0x1643
+.debug_abbrev   0x00000000     0x16f5
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x718 E:/AtmelStudio7/7.0/Packs/Atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128a/avr51/crtatmega128a.o
  .debug_abbrev  0x00000718      0x1c1 main.o
  .debug_abbrev  0x000008d9      0x2b3 system/BluetoothUART.o
  .debug_abbrev  0x00000b8c      0x2c4 system/ConsoleUART.o
- .debug_abbrev  0x00000e50      0x251 system/DistanceADC.o
- .debug_abbrev  0x000010a1      0x252 system/RotationINTR.o
- .debug_abbrev  0x000012f3      0x237 system/TickTIMER.o
- .debug_abbrev  0x0000152a      0x119 system/Util.o
+ .debug_abbrev  0x00000e50      0x288 system/DistanceADC.o
+ .debug_abbrev  0x000010d8      0x237 system/RotationINTR.o
+ .debug_abbrev  0x0000130f      0x2b2 system/TickTIMER.o
+ .debug_abbrev  0x000015c1      0x134 system/Util.o
 
-.debug_line     0x00000000     0x145f
+.debug_line     0x00000000     0x164b
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 E:/AtmelStudio7/7.0/Packs/Atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_line    0x00000169      0x22d main.o
- .debug_line    0x00000396      0x451 system/BluetoothUART.o
- .debug_line    0x000007e7      0x492 system/ConsoleUART.o
- .debug_line    0x00000c79      0x1f5 system/DistanceADC.o
- .debug_line    0x00000e6e      0x210 system/RotationINTR.o
- .debug_line    0x0000107e      0x25d system/TickTIMER.o
- .debug_line    0x000012db      0x184 system/Util.o
+ .debug_line    0x00000169      0x245 main.o
+ .debug_line    0x000003ae      0x451 system/BluetoothUART.o
+ .debug_line    0x000007ff      0x492 system/ConsoleUART.o
+ .debug_line    0x00000c91      0x287 system/DistanceADC.o
+ .debug_line    0x00000f18      0x203 system/RotationINTR.o
+ .debug_line    0x0000111b      0x332 system/TickTIMER.o
+ .debug_line    0x0000144d      0x1fe system/Util.o
 
-.debug_frame    0x00000000      0x858
+.debug_frame    0x00000000      0x8f4
  *(.debug_frame)
  .debug_frame   0x00000000       0x54 main.o
  .debug_frame   0x00000054      0x244 system/BluetoothUART.o
  .debug_frame   0x00000298      0x24c system/ConsoleUART.o
  .debug_frame   0x000004e4      0x130 system/DistanceADC.o
- .debug_frame   0x00000614       0xd8 system/RotationINTR.o
- .debug_frame   0x000006ec      0x108 system/TickTIMER.o
- .debug_frame   0x000007f4       0x64 system/Util.o
+ .debug_frame   0x00000614       0xec system/RotationINTR.o
+ .debug_frame   0x00000700      0x158 system/TickTIMER.o
+ .debug_frame   0x00000858       0x9c system/Util.o
 
-.debug_str      0x00000000      0xe31
+.debug_str      0x00000000      0xeda
  *(.debug_str)
  .debug_str     0x00000000      0x27d E:/AtmelStudio7/7.0/Packs/Atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_str     0x0000027d      0x82f main.o
-                                0x8a5 (size before relaxing)
- .debug_str     0x00000aac      0x123 system/BluetoothUART.o
+ .debug_str     0x0000027d      0x8ae main.o
+                                0x924 (size before relaxing)
+ .debug_str     0x00000b2b      0x123 system/BluetoothUART.o
                                 0x4d0 (size before relaxing)
- .debug_str     0x00000bcf       0x77 system/ConsoleUART.o
+ .debug_str     0x00000c4e       0x77 system/ConsoleUART.o
                                 0x642 (size before relaxing)
- .debug_str     0x00000c46       0x75 system/DistanceADC.o
-                                0x428 (size before relaxing)
- .debug_str     0x00000cbb       0x82 system/RotationINTR.o
-                                0x789 (size before relaxing)
- .debug_str     0x00000d3d       0x72 system/TickTIMER.o
-                                0x6dd (size before relaxing)
- .debug_str     0x00000daf       0x82 system/Util.o
-                                0x251 (size before relaxing)
+ .debug_str     0x00000cc5       0x75 system/DistanceADC.o
+                                0x620 (size before relaxing)
+ .debug_str     0x00000d3a       0x61 system/RotationINTR.o
+                                0x662 (size before relaxing)
+ .debug_str     0x00000d9b       0xb5 system/TickTIMER.o
+                                0x9da (size before relaxing)
+ .debug_str     0x00000e50       0x8a system/Util.o
+                                0x27b (size before relaxing)
 
-.debug_loc      0x00000000     0x1795
+.debug_loc      0x00000000     0x1b1b
  *(.debug_loc)
  .debug_loc     0x00000000       0x13 main.o
  .debug_loc     0x00000013      0x745 system/BluetoothUART.o
  .debug_loc     0x00000758      0x7c3 system/ConsoleUART.o
  .debug_loc     0x00000f1b      0x327 system/DistanceADC.o
- .debug_loc     0x00001242      0x1db system/RotationINTR.o
- .debug_loc     0x0000141d      0x206 system/TickTIMER.o
- .debug_loc     0x00001623      0x172 system/Util.o
+ .debug_loc     0x00001242      0x1f9 system/RotationINTR.o
+ .debug_loc     0x0000143b      0x384 system/TickTIMER.o
+ .debug_loc     0x000017bf      0x35c system/Util.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1030,15 +1051,15 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x268
+.debug_ranges   0x00000000      0x290
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x28 main.o
  .debug_ranges  0x00000028       0x90 system/BluetoothUART.o
  .debug_ranges  0x000000b8       0x90 system/ConsoleUART.o
  .debug_ranges  0x00000148       0x60 system/DistanceADC.o
- .debug_ranges  0x000001a8       0x38 system/RotationINTR.o
- .debug_ranges  0x000001e0       0x58 system/TickTIMER.o
- .debug_ranges  0x00000238       0x30 system/Util.o
+ .debug_ranges  0x000001a8       0x40 system/RotationINTR.o
+ .debug_ranges  0x000001e8       0x68 system/TickTIMER.o
+ .debug_ranges  0x00000250       0x40 system/Util.o
 
 .debug_macro
  *(.debug_macro)

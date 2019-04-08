@@ -28,6 +28,8 @@ unsigned int map(
 unsigned int x, unsigned int x_min, unsigned int x_max,
 unsigned int y_min, unsigned int y_max
 );
+void  byteToString(char key, unsigned char data, char *str);
+void  wordToString(char key, unsigned int data,  char *str);
 void  byteToString(unsigned char data, char *str);
 void  wordToString(unsigned int data,  char *str);
 

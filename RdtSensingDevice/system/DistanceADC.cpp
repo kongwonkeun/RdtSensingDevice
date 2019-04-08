@@ -60,6 +60,9 @@ void DistanceADC::isr()
 {
     m_value = inb(ADCW);
     m_centimeter = calculateCentiMeter(calculateMilliVolt(m_value));
+    if (x_manual_mode) return;
+    if (x_showup) x_console.write("D");
+    //
     sbi(ADCSRA, ADSC); // start conversion
 }
 

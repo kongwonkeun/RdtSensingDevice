@@ -10,6 +10,8 @@
 #include "system/Util.h"
 #include "system/ConsoleUART.h"
 #include "system/BluetoothUART.h"
+#include "system/RotationINTR.h"
+#include "system/DistanceADC.h"
 #include "system/TickTIMER.h"
 #include "main.h"
 
@@ -51,20 +53,47 @@ unsigned long TickTIMER::getSec()
     return m_sec;
 }
 
+void TickTIMER::incInterval()
+{
+    m_interval++;
+    char str[10];
+    wordToString(m_interval, str);
+    x_console.write("\ninterval is ");
+    x_console.write(str);
+    x_console.write("\n");
+}
+
+void TickTIMER::decInterval()
+{
+    if (m_interval < 2) {
+        x_console.write("\ninterval must be greater than 1\n");
+        return;
+    }
+    m_interval--;
+    char str[10];
+    wordToString(m_interval, str);
+    x_console.write("\ninterval is ");
+    x_console.write(str);
+    x_console.write("\n");
+}
+
 void TickTIMER::isr()
 {
     m_millisec++;
-    if (x_manual_mode) {
-        return;
-    }
-    if (!(m_millisec % m_interval)) {
-        if (x_showup) {
-            x_console.write("T");
-            x_bluetooth.write("T");
-        }
-    }
-    if (!(m_millisec % 1000)) {
-        m_sec++;
+    if (x_manual_mode) return;
+    if (x_showup) x_console.write("T");
+
+    if (!(m_millisec % m_interval)) { // 20msec tick
+        unsigned char d;
+        char s[10];
+        
+        d = (unsigned char)(x_rotation.getVelocity());
+        byteToString('V', d, s);
+        x_bluetooth.write(s);
+        
+        d = (unsigned char)(x_distance.getDistance());
+        byteToString('D', d, s);
+        x_bluetooth.write(s);
     }
 }
 

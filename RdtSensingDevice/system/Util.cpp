@@ -26,6 +26,16 @@ unsigned int y_min, unsigned int y_max)
     return y;
 }
 
+void byteToString(char key, unsigned char data, char *str)
+{
+    unsigned int num = data;
+    str[0] = key;
+    str[1] = 0x30 + (num  / 100);
+    str[2] = 0x30 + ((num % 100) / 10);
+    str[3] = 0x30 + (num  % 10);
+    str[4] = 0;
+}
+
 void byteToString(unsigned char data, char *str)
 {
     unsigned int num = data;
@@ -33,6 +43,18 @@ void byteToString(unsigned char data, char *str)
     str[1] = 0x30 + ((num % 100) / 10);
     str[2] = 0x30 + (num  % 10);
     str[3] = 0;
+}
+
+void wordToString(char key, unsigned int data, char *str)
+{
+    unsigned int  num = data;
+    str[0] = key;
+    str[1] = 0x30 + (num  / 10000);
+    str[2] = 0x30 + ((num % 10000) / 1000);
+    str[3] = 0x30 + ((num % 1000) / 100);
+    str[4] = 0x30 + ((num % 100) / 10);
+    str[5] = 0x30 + (num  % 10);
+    str[6] = 0;
 }
 
 void wordToString(unsigned int data, char *str)

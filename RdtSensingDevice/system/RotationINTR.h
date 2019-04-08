@@ -17,6 +17,7 @@ public:
     RotationINTR();
     ~RotationINTR();
     int  begin();
+    unsigned int getVelocity();
     void isr();
 private:
     unsigned long m_rotation;

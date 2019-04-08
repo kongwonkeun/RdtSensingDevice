@@ -49,6 +49,8 @@ int main(void)
             case '!': help(); break;
             case '@': toggleShowup(); break;
             case '#': toggleManualMode(); break;
+            case '+': x_tick.incInterval(); break;
+            case '-': x_tick.decInterval(); break;
             default:  break;
         }
     }
@@ -57,9 +59,11 @@ int main(void)
 void help()
 {
     x_console.write("\n");
-    x_console.write("! - help message\n");
-    x_console.write("@ - show-up sensing activity on/off\n");
-    x_console.write("# - manual event mode on/off\n");
+    x_console.write("! : help message\n");
+    x_console.write("@ : show-up sensing activity on/off\n");
+    x_console.write("# : manual event mode on/off\n");
+    x_console.write("+ : increase interval\n");
+    x_console.write("- : decrease interval\n");
 }
 
 void toggleShowup()
