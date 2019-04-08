@@ -25,8 +25,8 @@
 void* operator new(size_t n);
 void  operator delete(void* p);
 unsigned int map(
-unsigned int x, unsigned int x_min, unsigned int x_max,
-unsigned int y_min, unsigned int y_max
+unsigned long x, unsigned long x_min, unsigned long x_max,
+unsigned long y_min, unsigned long y_max
 );
 void  byteToString(char key, unsigned char data, char *str);
 void  wordToString(char key, unsigned int data,  char *str);

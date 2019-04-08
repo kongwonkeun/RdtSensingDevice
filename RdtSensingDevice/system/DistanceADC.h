@@ -23,8 +23,8 @@ public:
     unsigned int  calculateCentiMeter(unsigned int millivolt);
     unsigned char m_channel;
     unsigned int  m_centimeter;
-    unsigned int  m_maxValue;
-    unsigned int  m_maxMilliVolt;
+    unsigned long m_maxValue;
+    unsigned long m_maxMilliVolt;
     unsigned int  m_value;
 };
 

@@ -44,6 +44,12 @@ void DistanceADC::end()
 unsigned int DistanceADC::getDistance()
 {
     unsigned int millivolt = calculateMilliVolt(readAdc0());
+    /*
+    char str[10];
+    wordToString(millivolt, str);
+    x_console.write(str);
+    x_console.write("\n");
+    */
     return calculateCentiMeter(millivolt);
 }
 
@@ -53,7 +59,14 @@ unsigned int DistanceADC::readAdc0()
     outb(ADMUX, inb(ADMUX) | m_channel);
     sbi(ADCSRA, ADSC); // start
     while (bit_is_set(ADCSRA, ADSC)); // wait until the complete of conversion
-    return inb(ADCW);
+    unsigned int value = inb(ADCW);
+    /*
+    char str[10];
+    wordToString(value, str);
+    x_console.write(str);
+    x_console.write("\n");
+    */
+    return value;
 }
 
 void DistanceADC::isr()
@@ -68,7 +81,7 @@ void DistanceADC::isr()
 
 unsigned int DistanceADC::calculateMilliVolt(unsigned int value)
 {
-    return map(value, 0, m_maxValue, 0, m_maxMilliVolt);
+    return map((unsigned long)value, 0, m_maxValue, 0, m_maxMilliVolt);
 }
 
 unsigned int DistanceADC::calculateCentiMeter(unsigned int millivolt)

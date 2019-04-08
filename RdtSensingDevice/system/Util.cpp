@@ -19,10 +19,10 @@ void operator delete(void* p)
 }
 
 unsigned int map(
-unsigned int x, unsigned int x_min, unsigned int x_max,
-unsigned int y_min, unsigned int y_max)
+unsigned long x, unsigned long x_min, unsigned long x_max,
+unsigned long y_min, unsigned long y_max)
 {
-    unsigned int y = ((x - x_min) * (y_max - y_max) / (x_max - x_min)) + y_min;
+    unsigned int y = ((x - x_min) * (y_max - y_min) / (x_max - x_min)) + y_min;
     return y;
 }
 
