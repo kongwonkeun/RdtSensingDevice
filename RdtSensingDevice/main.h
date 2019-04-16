@@ -12,7 +12,7 @@
 
 #define BAUDRATE_CONSOLE 115200UL
 #define BAUDRATE_BLUETOOTH 115200UL
-#define TICK_INTERVAL 20 // 20 millisec
+#define TICK_INTERVAL 30 // 30 millisec
 
 extern bool x_showup;
 extern bool x_manual_mode;

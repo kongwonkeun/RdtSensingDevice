@@ -325,7 +325,7 @@ int main(void)
      2a0:	92 e0       	ldi	r25, 0x02	; 2
      2a2:	3a d0       	rcall	.+116    	; 0x318 <_ZN13BluetoothUART5beginEm>
     x_tick.begin(TICK_INTERVAL);
-     2a4:	64 e1       	ldi	r22, 0x14	; 20
+     2a4:	6e e1       	ldi	r22, 0x1E	; 30
      2a6:	70 e0       	ldi	r23, 0x00	; 0
      2a8:	85 e3       	ldi	r24, 0x35	; 53
      2aa:	93 e0       	ldi	r25, 0x03	; 3
