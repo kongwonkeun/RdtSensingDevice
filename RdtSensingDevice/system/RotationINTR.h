@@ -9,7 +9,7 @@
 #ifndef ROTATIONINTR_H_
 #define ROTATIONINTR_H_
 
-#define WHEEL_SIZE 0.5 // 2m --> 50cm
+#define WHEEL_SIZE 0.1 // 2m --> 50cm --> 10cm
 
 class RotationINTR
 {

@@ -1557,8 +1557,8 @@ void RotationINTR::isr()
      b36:	ac 01       	movw	r20, r24
      b38:	60 e0       	ldi	r22, 0x00	; 0
      b3a:	70 e0       	ldi	r23, 0x00	; 0
-     b3c:	8a ef       	ldi	r24, 0xFA	; 250
-     b3e:	93 e4       	ldi	r25, 0x43	; 67
+     b3c:	88 ec       	ldi	r24, 0xC8	; 200
+     b3e:	92 e4       	ldi	r25, 0x42	; 66
      b40:	e5 d2       	rcall	.+1482   	; 0x110c <__divsf3>
      b42:	4c d3       	rcall	.+1688   	; 0x11dc <__fixunssfsi>
      b44:	79 87       	std	Y+9, r23	; 0x09
