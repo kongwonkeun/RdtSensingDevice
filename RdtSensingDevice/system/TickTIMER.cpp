@@ -95,6 +95,14 @@ void TickTIMER::isr()
         byteToString('D', d, s);
         x_bluetooth.write(s);
     }
+    
+    if (!(m_millisec % 3000)) { // 3sec
+        if (x_rotation.m_last_meter_per_sec == x_rotation.m_meter_per_sec) {
+            x_rotation.m_meter_per_sec = 0;
+        } else {
+            x_rotation.m_last_meter_per_sec  = x_rotation.m_meter_per_sec;
+        }
+    }
 }
 
 TickTIMER x_tick;

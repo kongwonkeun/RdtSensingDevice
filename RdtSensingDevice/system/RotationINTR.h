@@ -9,7 +9,7 @@
 #ifndef ROTATIONINTR_H_
 #define ROTATIONINTR_H_
 
-#define WHEEL_SIZE 2 // 2m
+#define WHEEL_SIZE 0.5 // 2m --> 50cm
 
 class RotationINTR
 {
@@ -22,7 +22,9 @@ public:
 private:
     unsigned long m_rotation;
     unsigned long m_msec;
+public:
     unsigned int  m_meter_per_sec;
+    unsigned int  m_last_meter_per_sec;
 };
 
 extern RotationINTR x_rotation;
