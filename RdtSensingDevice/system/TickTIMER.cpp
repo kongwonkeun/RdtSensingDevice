@@ -83,24 +83,25 @@ void TickTIMER::isr()
     if (x_manual_mode) return;
     if (x_showup) x_console.write("T");
 
-    if (!(m_millisec % m_interval)) { // 20msec tick
+    if (!(m_millisec % m_interval)) { // 30msec tick
         unsigned char d;
+        unsigned int w;
         char s[10];
-        
-        d = (unsigned char)(x_rotation.getVelocity());
-        byteToString('V', d, s);
+
+        w = (unsigned int)(x_rotation.getVelocity());
+        wordToString('V', w, s);
         x_bluetooth.write(s);
-        
+
         d = (unsigned char)(x_distance.getDistance());
         byteToString('D', d, s);
         x_bluetooth.write(s);
     }
-    
+
     if (!(m_millisec % 3000)) { // 3sec
-        if (x_rotation.m_last_meter_per_sec == x_rotation.m_meter_per_sec) {
-            x_rotation.m_meter_per_sec = 0;
+        if (x_rotation.m_last_cmeter_per_sec == x_rotation.m_cmeter_per_sec) {
+            x_rotation.m_cmeter_per_sec = 0;
         } else {
-            x_rotation.m_last_meter_per_sec  = x_rotation.m_meter_per_sec;
+            x_rotation.m_last_cmeter_per_sec  = x_rotation.m_cmeter_per_sec;
         }
     }
 }

@@ -19,7 +19,7 @@ ISR(INT0_vect)
     x_rotation.isr();
 }
 
-RotationINTR::RotationINTR() : m_rotation(0), m_msec(0), m_meter_per_sec(0), m_last_meter_per_sec(0)
+RotationINTR::RotationINTR() : m_rotation(0), m_msec(0), m_cmeter_per_sec(0), m_last_cmeter_per_sec(0)
 {
 }
 
@@ -38,7 +38,7 @@ int RotationINTR::begin()
 
 unsigned int RotationINTR::getVelocity()
 {
-    return m_meter_per_sec;
+    return m_cmeter_per_sec;
 }
 
 void RotationINTR::isr()
@@ -46,10 +46,10 @@ void RotationINTR::isr()
     m_rotation++;
     if (x_manual_mode) return;
     if (x_showup) x_console.write("R");
-    
+
     unsigned long t = x_tick.getMillisec();
     if (m_msec > t) return; // ignore overflow
-    m_meter_per_sec = (WHEEL_SIZE * 1000) / (t - m_msec);
+    m_cmeter_per_sec = (WHEEL_SIZE * 1000) / (t - m_msec);
     m_msec = t;
 }
 
